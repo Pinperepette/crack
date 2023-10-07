@@ -18,7 +18,6 @@ Before using this script, ensure you have the following:
 
    Open Terminal, navigate to the directory containing the script, and give execution permissions using the following command:
 
-   ```bash
    chmod +x crack.sh
 
    ./crack.sh
