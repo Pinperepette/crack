@@ -18,3 +18,19 @@ Before using this script, ensure you have the following:
 
    ```bash
    ./crack.sh
+
+    Follow the Prompts
+        Loading Progress Bar: The script will display a loading progress bar while initializing.
+        Drag Application: Drag the target application into the terminal and press Enter.
+        Cracking Process: The script will search for specific files within the application and inject the required libraries.
+        Completion: Once the process is completed, the quarantine attribute will be removed, and the application is cracked successfully.
+
+Important Notes
+
+    This script should be used responsibly and only for personal educational purposes.
+    Modifying applications without proper authorization might violate legal agreements or terms of service.
+    Always respect software licenses and the rights of developers.
+
+Disclaimer
+
+This tool is provided for educational purposes only. The developers are not responsible for any misuse or damage caused by this script
