@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Funzione per stampare la barra di avanzamento
+# Function to print the progress bar
 function print_progress_bar {
     local ratio=$1
     local mark="#"
@@ -15,10 +15,10 @@ do
     sleep 0.4
 done
 
-# Ottieni il percorso corrente
+# Get the current directory path
 current_directory=$(pwd)
 
-# Cerca i file insert_dylib e libInlineInjectPlugin.dylib nella cartella Tools
+# Search for insert_dylib and libInlineInjectPlugin.dylib files in the Tools folder
 insert_dylib_files=($current_directory/Tools/insert_dylib)
 lib_inline_files=($current_directory/Tools/libInlineInjectPlugin.dylib)
 
@@ -29,7 +29,7 @@ echo " "
 echo "Lib_inline files found:"
 echo "${lib_inline_files[@]}"
 
-# Controlla se i file sono stati trovati e imposta i percorsi
+# Check if the files are found and set the paths
 if [[ ${#insert_dylib_files[@]} -gt 0 && ${#lib_inline_files[@]} -gt 0 ]]; then
     insert_dylib=${insert_dylib_files[0]}
     lib_inline=${lib_inline_files[0]}
@@ -37,14 +37,14 @@ if [[ ${#insert_dylib_files[@]} -gt 0 && ${#lib_inline_files[@]} -gt 0 ]]; then
     echo "insert_dylib path: $insert_dylib"
     echo "lib_inline path: $lib_inline"
 
-    # Assegna i permessi di esecuzione ai file
+    # Assign execution permissions to the files
     chmod +x "$insert_dylib"
     chmod +x "$lib_inline"
 
-    # Richiedi l'applicazione
+    # Request the application path
     read -p "Drag the application into the terminal: " mac_app
 
-    # Trova e modifica i file all'interno dell'applicazione
+    # Find and modify files inside the application
     file_names=(
         "Announcements"
         "KMDrawViewSDK_Mac"
@@ -69,7 +69,7 @@ if [[ ${#insert_dylib_files[@]} -gt 0 && ${#lib_inline_files[@]} -gt 0 ]]; then
         fi
     done
 
-    # Rimuovi l'attributo di quarantena dall'applicazione
+    # Remove the quarantine attribute from the application
     xattr -d com.apple.quarantine "$mac_app"
 
     echo " "
