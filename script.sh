@@ -9,10 +9,12 @@ function print_progress_bar {
 }
 
 echo " "
-for ratio in {0..100..25}
+ratio=0
+while [ $ratio -le 100 ]
 do
     print_progress_bar $ratio
     sleep 0.4
+    ratio=$((ratio + 25))
 done
 
 # Get the current directory path
@@ -22,20 +24,10 @@ current_directory=$(pwd)
 insert_dylib_files=($current_directory/Tools/insert_dylib)
 lib_inline_files=($current_directory/Tools/libInlineInjectPlugin.dylib)
 
-echo " "
-echo "Insert_dylib files found:"
-echo "${insert_dylib_files[@]}"
-echo " "
-echo "Lib_inline files found:"
-echo "${lib_inline_files[@]}"
-
 # Check if the files are found and set the paths
 if [[ ${#insert_dylib_files[@]} -gt 0 && ${#lib_inline_files[@]} -gt 0 ]]; then
     insert_dylib=${insert_dylib_files[0]}
     lib_inline=${lib_inline_files[0]}
-
-    echo "insert_dylib path: $insert_dylib"
-    echo "lib_inline path: $lib_inline"
 
     # Assign execution permissions to the files
     chmod +x "$insert_dylib"
@@ -74,7 +66,7 @@ if [[ ${#insert_dylib_files[@]} -gt 0 && ${#lib_inline_files[@]} -gt 0 ]]; then
 
     echo " "
     echo "Removed quarantine attribute, App cracked successfully. (If Mac is M1 series or above, run with Rosetta)"
-    echo "Cracked, Have a good time. by hoochanlon."
+    echo "Cracked, Have a good time, Coccodio"
 else
     echo "Insert_dylib or Lib_inline files not found. Please check the paths."
 fi
