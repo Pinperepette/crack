@@ -1,4 +1,4 @@
-### # Cracking Tool for macOS Applications
+###  Cracking Tool for macOS Applications
 
 ### This script automates the process of removing the quarantine attribute and injecting specific dynamic libraries into macOS applications. It is useful for modifying applications for personal use; however, please note that it may violate the terms of service for certain applications.
 
