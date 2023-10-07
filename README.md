@@ -21,7 +21,6 @@ Before using this script, ensure you have the following:
    ```bash
    chmod +x crack.sh
 
-   ```bash
    ./crack.sh
 
     Follow the Prompts
